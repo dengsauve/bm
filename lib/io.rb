@@ -9,8 +9,8 @@ def get_hash
   end
 
   {
-      'bookmarks':[],
-      'debug': false
+      "bookmarks" => [],
+      "debug" => false
   }
 end
 
