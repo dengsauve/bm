@@ -6,7 +6,7 @@ BM should work with most unix/mac systems (sorry not sorry Windows)
 
 ## Installation
 
-1. Clone the repo
+1. Clone the repo `git clone https://github.com/dengsauve/bm.git`
 2. Alias for convenience
 
 ```bash
@@ -45,9 +45,9 @@ Deletes url with the specified index
 
 I wanted a plain and simple to use (e.g. [NB cli note tool](https://github.com/xwmx/nb)), and didn't like the other options available.
 
-## Goals
+### Goals
 
-### CRUD
+#### CRUD
 
 - [x] `bm add ${url}` add a website to your library
 - [x] `bm ls` list all bookmarks w/index
@@ -58,10 +58,14 @@ I wanted a plain and simple to use (e.g. [NB cli note tool](https://github.com/x
 - [x] `bm [rm|remove|delete] ${url_id}` using search, you can get the id of the bookmark you want to remove
 - [ ] `bm` launch an interactive terminal (maybe, depends on if it's useful)
 
-### Persistence
+#### Persistence
 
 Local DB or .json file seems like the best bet
 
-### Syncing
+#### Syncing
 
 Going the JSON route would make it easy to update a .git repo. Not sure what to do about a DB
+
+### Contributions
+
+Feel free to submit a PR with any changes you'd like to see.
