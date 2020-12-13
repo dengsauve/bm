@@ -11,9 +11,9 @@ end
 
 @reserved_words = %w[add search ls list edit rm remove delete]
 @bookmark_hash = get_hash
-@debug = false
-puts "Retrieved bookmark hash: #{@bookmark_hash}" if @debug
+@debug = @bookmark_hash['debug']
 
+puts "Retrieved bookmark hash: #{@bookmark_hash}" if @debug
 puts "Arguments: #{ARGV.inspect}" if @debug
 
 

@@ -8,7 +8,10 @@ def get_hash
     return JSON.parse(file)
   end
 
-  {'bookmarks':[]}
+  {
+      'bookmarks':[],
+      'debug': false
+  }
 end
 
 def write_hash
