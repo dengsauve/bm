@@ -24,7 +24,7 @@ end
 
 
 def search_and_open(target)
-  urls = search_hash(target)
+  urls = @bookmark_hash['bookmarks'].select { |e| e.include? target }
   if urls.size > 0
     open_url(urls[0])
   end

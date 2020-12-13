@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 require 'json'
 require 'require_all'
-require_all('lib')
+
+require_all("#{__dir__}/lib")
 
 
 def dump_hash
@@ -45,4 +46,25 @@ if ARGV.size == 1
       search_and_open(ARGV[0])
     end
   end
+end
+
+
+if ARGV.size == 0
+  # dump useful info here
+  puts "bm: A bookmark utility
+
+commands:
+  - add
+  - search
+  - rm | remove | delete
+  - ls | list
+
+example:
+  bm add https://www.google.com
+
+  bm search google
+
+  bm goog
+    this would open a the first bookmark to contain the string 'goog'
+"
 end
