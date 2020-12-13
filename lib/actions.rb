@@ -7,11 +7,6 @@ def add_url(url_string)
 end
 
 
-def open_url(url)
-  system("open #{url}") if url
-end
-
-
 def search_hash(target)
   index_retained_hash = {}
   @bookmark_hash['bookmarks'].each_with_index do |e, i|
@@ -20,6 +15,11 @@ def search_hash(target)
     end
   end
   puts_indexed_bookmarks(index_retained_hash)
+end
+
+
+def open_url(url)
+  system("open #{url}") if url
 end
 
 
