@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
-require 'json'
 require 'require_all'
-
 require_all("#{__dir__}/lib")
 
 

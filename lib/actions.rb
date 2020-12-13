@@ -1,5 +1,5 @@
 def add_url(url_string)
-  puts "add_url bookmark_hash: #{@bookmark_hash['bookmarks']}" if @debug
+  puts "add_url bookmark_hash: #{@bookmark_hash['bookmarks'].inspect}" if @debug
   @bookmark_hash['bookmarks'] << url_string
   @bookmark_hash['bookmarks'].uniq!
   dump_hash if @debug
