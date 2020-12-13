@@ -9,22 +9,13 @@ def dump_hash
 end
 
 
-def search_hash(target)
-  dump_hash
-end
-
-
-def search_and_open(target)
-  #
-end
-
-
 @reserved_words = %w[add search ls list edit rm remove delete]
 @bookmark_hash = get_hash
 @debug = false
 puts "Retrieved bookmark hash: #{@bookmark_hash}" if @debug
 
 puts "Arguments: #{ARGV.inspect}" if @debug
+
 
 if ARGV.size > 1 and ARGV[1]
   case ARGV[0]
@@ -41,6 +32,7 @@ if ARGV.size > 1 and ARGV[1]
   end
 end
 
+
 if ARGV.size == 1
   case ARGV[0]
   when 'list', 'ls'
@@ -48,7 +40,7 @@ if ARGV.size == 1
     list_bookmarks
   else
     if ARGV[0].numeric?
-      open_url(ARGV[0].to_i)
+      open_url_from_index(ARGV[0].to_i)
     else
       search_and_open(ARGV[0])
     end

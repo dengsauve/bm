@@ -1,6 +1,18 @@
 def list_bookmarks
-  @bookmark_hash['bookmarks'].each_with_index do |bookmark, index|
+  puts_bookmarks(@bookmark_hash['bookmarks'])
+end
+
+
+def puts_bookmarks(bookmarks)
+  bookmarks.each_with_index do |bookmark, index|
     puts "#{index}. #{bookmark}"
+  end
+end
+
+
+def puts_indexed_bookmarks(bookmarks)
+  bookmarks.each do |bookmark|
+    puts "#{bookmark[0]}. #{bookmark[1]}"
   end
 end
 
@@ -14,9 +26,32 @@ def add_url(url_string)
 end
 
 
-def open_url(index)
-  url = @bookmark_hash['bookmarks'][index]
+def open_url(url)
   system("open #{url}") if url
+end
+
+
+def search_hash(target)
+  index_retained_hash = {}
+  @bookmark_hash['bookmarks'].each_with_index do |e, i|
+    if e.include? target
+      index_retained_hash[i] = e
+    end
+  end
+  puts_indexed_bookmarks(index_retained_hash)
+end
+
+
+def search_and_open(target)
+  urls = search_hash(target)
+  if urls.size > 0
+    open_url(urls[0])
+  end
+end
+
+
+def open_url_from_index(index)
+  open_url(@bookmark_hash['bookmarks'][index])
 end
 
 
