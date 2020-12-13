@@ -1,22 +1,3 @@
-def list_bookmarks
-  puts_bookmarks(@bookmark_hash['bookmarks'])
-end
-
-
-def puts_bookmarks(bookmarks)
-  bookmarks.each_with_index do |bookmark, index|
-    puts "#{index}. #{bookmark}"
-  end
-end
-
-
-def puts_indexed_bookmarks(bookmarks)
-  bookmarks.each do |bookmark|
-    puts "#{bookmark[0]}. #{bookmark[1]}"
-  end
-end
-
-
 def add_url(url_string)
   puts "add_url bookmark_hash: #{@bookmark_hash['bookmarks']}" if @debug
   @bookmark_hash['bookmarks'] << url_string
