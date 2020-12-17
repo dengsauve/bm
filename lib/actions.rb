@@ -3,7 +3,7 @@ def add_url(url_string)
   @bookmark_hash['bookmarks'] << url_string
   @bookmark_hash['bookmarks'].uniq!
   dump_hash if @debug
-  0
+  true
 end
 
 
@@ -38,10 +38,15 @@ end
 
 def remove_url(index)
   @bookmark_hash['bookmarks'].delete_at(index)
-  0
+  true
 end
 
 
 def get_console_width
   console_width = `tput cols`.chomp.to_i
+end
+
+
+def dump_hash
+  puts @bookmark_hash.inspect
 end
