@@ -40,3 +40,8 @@ def remove_url(index)
   @bookmark_hash['bookmarks'].delete_at(index)
   0
 end
+
+
+def get_console_width
+  console_width = `tput cols`.chomp.to_i
+end

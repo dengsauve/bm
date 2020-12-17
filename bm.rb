@@ -29,14 +29,13 @@ if ARGV.size > 1 and ARGV[1]
   else
     puts "You haven't entered a recognized command! Try `bm help` for more info."
   end
-end
-
-
-if ARGV.size == 1
+elsif ARGV.size == 1
   case ARGV[0]
   when 'list', 'ls'
     dump_hash if @debug
     list_bookmarks
+  when 'help'
+    puts_help
   else
     if ARGV[0].numeric?
       open_url_from_index(ARGV[0].to_i)
@@ -44,25 +43,7 @@ if ARGV.size == 1
       search_and_open(ARGV[0])
     end
   end
-end
-
-
-if ARGV.size == 0
-  # dump useful info here
-  puts "bm: A bookmark utility
-
-commands:
-  - add
-  - search
-  - rm | remove | delete
-  - ls | list
-
-example:
-  bm add https://www.google.com
-
-  bm search google
-
-  bm goog
-    this would open a the first bookmark to contain the string 'goog'
-"
+else
+  puts_banner
+  list_bookmarks
 end
