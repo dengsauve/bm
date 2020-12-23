@@ -8,8 +8,11 @@ end
 
 def puts_bookmarks(bookmarks)
   rows = []
-  bookmarks.each_with_index { |bookmark, index| rows << ["#{index.to_s.ljust(2)} #{bookmark}"] }
-  table = Terminal::Table.new :rows => rows, :title => "bookmarks", :style => {:width => get_console_width}
+  bookmarks.each_with_index { |bookmark, index| rows << ["#{index.to_s.ljust(2)} #{bookmark["url"]}", bookmark["tags"].join(", ")] }
+  table = Terminal::Table.new :rows => rows,
+                              :title => "bookmarks",
+                              :style => {:width => get_console_width},
+                              :headings => ['sites', 'tags']
   puts table
 end
 

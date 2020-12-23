@@ -14,7 +14,7 @@ puts "Arguments: #{ARGV.inspect}" if @debug
 if ARGV.size > 1 and ARGV[1]
   case ARGV[0]
   when 'add'
-    write_hash if add_url(ARGV[1])
+    write_hash if add_url(ARGV[1], ARGV[2..-1])
 
   when 'search'
     search_hash(ARGV[1])
