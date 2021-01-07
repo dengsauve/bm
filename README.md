@@ -17,7 +17,7 @@ alias bm='ruby /absolute/path/to/bm.rb'
 
 ## Usage
 
-`bm add ${url}`
+`bm add ${url} optionally followed by space separated tags`
 
 Adds a website URL to your library (format should be http(s)://domain.com)
 
@@ -49,7 +49,7 @@ I wanted a plain and simple to use (e.g. [NB cli note tool](https://github.com/x
 
 #### CRUD
 
-- [x] `bm add ${url}` add a website to your library
+- [x] `bm add ${url} optional space seperated tags` add a website to your library
 - [x] `bm ls` list all bookmarks w/index
 - [x] `bm ${index}` open the url at the specified index
 - [x] `bm ${search_term}` open first url that contains string (result may not be what you expect! Use w/care)
